@@ -1,3 +1,7 @@
+/*
+ * Copyright Paulo A. Teixeira 2017
+ * MIT License : http://adampritchard.mit-license.org/
+ */
 var Vigenere = function () {
     this.KEY             = 'vigenere'; // please pass the key for parameter and don't use this one
     this.ALPHABET_UPPER  = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','W','Z','Ç'];
