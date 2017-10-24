@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Cifra de Vigenére</title>
+    </head>
+    <body>
+        <input type="text" id="texto" />
+
+        <input type="button" onclick="encriptar()" value="Encriptar" />
+
+
+        <p>Resudado da Encriptação</p>
+        <p id="resultado"></p>
+        <p>Decriptação do Texto encriptado acima</p>
+        <p id="dec"></p>
+
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+
+          <script src="vigenere.js"></script>
+        <script type="text/javascript">
+            var vig = new Vigenere();
+
+            function encriptar() {
+                var word        = vig.encripty($('#texto').val(), 'saviors');
+                var dencripty   = vig.dencripty(word, 'saviors');
+
+                $('#resultado').html(word);
+                $('#dec').html(dencripty);
+            }
+        </script>
+    </body>
+</html>
