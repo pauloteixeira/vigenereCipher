@@ -2,13 +2,13 @@
  * Copyright Paulo A. Teixeira 2017
  * MIT License : http://adampritchard.mit-license.org/
  */
-const Vigenere = function () {
+const Vigenere = () => {
     this.KEY             = 'vigenere'; // please pass the key for parameter and don't use this one
     this.ALPHABET_UPPER  = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','W','Z','Ç'];
     this.ALPHABET_LOW    = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','x','y','w','z','ç'];
     this.ALPHABET_LEN    = this.ALPHABET_LOW.length;
 
-    this.encripty = function( message, key = this.KEY ) {
+    this.encripty = ( message, key = this.KEY ) => {
         const keyU          = key.toUpperCase();
         const keyL          = key.toLowerCase();
         let wordArray       = this.removeAccentuation( message ).split(' ');
@@ -35,7 +35,7 @@ const Vigenere = function () {
         return result;
     };
 
-    this.dencripty = function( message, key = this.KEY ) {
+    this.dencripty = ( message, key = this.KEY ) => {
         const keyU          = key.toUpperCase();
         const keyL          = key.toLowerCase();
         let wordArray       = message.split(' ');
@@ -67,7 +67,7 @@ const Vigenere = function () {
         return result;
     };
 
-    this.repeatKeyUntilDoneWord = function( message, key = this.KEY ) {
+    this.repeatKeyUntilDoneWord = ( message, key = this.KEY ) => {
         const keyU          = key.toUpperCase();
         const keyL          = key.toLowerCase();
         let letterQuantity  = 0;
@@ -101,7 +101,7 @@ const Vigenere = function () {
         return result;
     }
 
-    this.removeAccentuation = function( arrayChars ) {
+    this.removeAccentuation = ( arrayChars ) => {
         const charsAccents  = 'á,à,â,ã,é,è,ê,í,ï,ó,ô,õ,ö,ú,ñ'.split(',');
         const chars         = 'a,a,a,a,e,e,e,i,i,o,o,o,o,u,n'.split(',');
         let result          = [];
